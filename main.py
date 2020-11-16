@@ -27,14 +27,20 @@ while True:
         insert_2 = input()
         if insert_2 == "y" or "Y":
             print("Please insert the phone number of the contact")
-            phone = int(input())
+            phone = str(input())
+            sql = "INSERT INTO contacts (First_Name, Last_Name, phone) VALUES (%s, %s, %s)"
+            sql_2 = (First_Name, Last_Name, phone)
+            mycursor.execute(sql, sql_2)
+            mydb.commit()
+            Print("Done!")
+            break
         elif insert_2 == "n" or "N":
             continue
 
 # remark We already created a table called (Contacts)
 
-mycursor.execute("")
 
 # todo add a try/else if a value error is raised
 # todo Complete if insert_2 == y
 # todo add comments
+# todo add a try/else if an Index Error happens in line 25
