@@ -73,15 +73,16 @@ elif insert == "2":
     First_Name = insert_1_list[0]  # the first name of the contact
     Last_Name = insert_1_list[1]  # the last name of the contact
     sql = "select phone from contacts where First_Name = %s and Last_Name = %s"
-    sql_2 = (First_Name, Last_Name)
+    # the string with the code to run in mysql database
+    sql_2 = (First_Name, Last_Name)     # the placeholders for the mysql database code
 
-    mycursor.execute(sql, sql_2)
+    mycursor.execute(sql, sql_2)        # execute the mysql code
 
-    myresult = mycursor.fetchone()
+    myresult = mycursor.fetchone()      # returns the phone number of the contact
 
     print("The number of the selected contact is:")
 
-    for row in myresult:
+    for row in myresult:        # prints the phone number of the contact
         print(row)
 
 # todo add a try/else if a value error is raised
