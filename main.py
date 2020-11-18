@@ -36,7 +36,7 @@ if insert == "1":                                       # Acts if the client cho
 
         why = input()
 
-        if why == "y":
+        if why == "y" or why == "Y":
 
             print("Please insert the phone number of the contact")
 
@@ -53,7 +53,12 @@ if insert == "1":                                       # Acts if the client cho
 
             i = 1
 
-        if why == "n":
+        elif why == "n" or why == "n":
+            i = 0
+
+        else:
+            print("Please insert 'y' (Yes) or 'n' (No) and insert your first name and last name with space in between")
+            print("")
             i = 0
 
 
