@@ -15,9 +15,13 @@ print("1: Insert a new contact")
 print("2: Search for the number of a contact")
 
 insert = input()
+i = 0
 
-while True:
-    if insert == "1":                                       # Acts if the client chooses the first choice
+if insert == "1":                                       # Acts if the client chooses the first choice
+
+    while i == 0:
+
+        i = 0
 
         print("Type the First Name and the Last Name of the Contact with space in between")
 
@@ -28,11 +32,11 @@ while True:
         First_Name = insert_1_list[0]
         Last_Name = insert_1_list[1]
 
-        print("Are you sure the name is " + First_Name + " " + Last_Name + "((y/n))")
+        print("Are you sure the name is " + First_Name + " " + Last_Name + " " + "(y/n)")
 
-        insert_2 = input()
+        why = input()
 
-        if insert_2 == "y" or "Y":
+        if why == "y":
 
             print("Please insert the phone number of the contact")
 
@@ -47,10 +51,10 @@ while True:
 
             print("Done!")
 
-            break
+            i = 1
 
-        elif insert_2 == "n" or "N":
-            continue
+        if why == "n":
+            i = 0
 
 
 # todo add a try/else if a value error is raised
