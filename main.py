@@ -30,7 +30,10 @@ if insert == "1":                                     # Acts if the client choos
         insert_1_list = insert_1.split()
 
         First_Name = insert_1_list[0]                 # the first name of the contact
+        First_Name = First_Name.upper()          # capitalizes the string
+
         Last_Name = insert_1_list[1]                  # the last name of the contact
+        Last_Name = Last_Name.upper()            # capitalizes the string
 
         print("Are you sure the name is " + First_Name + " " + Last_Name + " " + "(y/n)")
 
@@ -71,11 +74,15 @@ elif insert == "2":
     insert_1_list = insert_1.split()
 
     First_Name = insert_1_list[0]  # the first name of the contact
-    Last_Name = insert_1_list[1]  # the last name of the contact
+    First_Name = First_Name.upper()      # capitalizes the string
+
+    Last_Name = insert_1_list[1]   # the last name of the contact
+    Last_Name = Last_Name.upper()      # capitalizes the string
+
     sql = "select phone from contacts where First_Name = %s and Last_Name = %s"
     # the string with the code to run in mysql database
-    sql_2 = (First_Name, Last_Name)     # the placeholders for the mysql database code
 
+    sql_2 = (First_Name, Last_Name)     # the placeholders for the mysql database code
     mycursor.execute(sql, sql_2)        # execute the mysql code
 
     myresult = mycursor.fetchone()      # returns the phone number of the contact
